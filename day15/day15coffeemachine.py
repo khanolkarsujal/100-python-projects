@@ -48,7 +48,7 @@ for key in MENU:
     
     
     
-print(results) 
+
 
 profit = 0
 resources = {
@@ -65,14 +65,28 @@ def is_resource_sufficient(order_ingredients):
             return False
     return True
 
+def take_positive_integer(input_string):
+     while True:
+      collected_input  = input(input_string) 
+      if collected_input.isdigit():  # checks if input is a positive integer
+        return int(collected_input)
+      
+        
+      else:
+        print("Invalid input. Please enter a number.")
+
+    
+    
 
 def process_coins():
     """Returns the total calculated from coins inserted."""
-    print("Please insert coins.")
-    total = int(input("how many quarters?: ")) * 0.25
-    total += int(input("how many dimes?: ")) * 0.1
-    total += int(input("how many nickles?: ")) * 0.05
-    total += int(input("how many pennies?: ")) * 0.01
+    print("Please insert coins.") 
+
+   
+    total = take_positive_integer("how many quarters?:") * 0.25
+    total += take_positive_integer("how many dimes?:") * 0.1
+    total += take_positive_integer("how many niclkes?:") * 0.05
+    total += take_positive_integer("how many pennies?:") * 0.01
     return total
 
 
@@ -99,7 +113,18 @@ def make_coffee(drink_name, order_ingredients):
 is_on = True
 
 while is_on:
-    choice = input(f"​What would you like? {results}: ")
+    
+    
+    while True:
+     choice = input(f"​What would you like? {results}: ")
+     if choice in results:
+        
+        break
+     
+     else:
+        print("Invalid input. Please enter different choice.")
+       
+        
     if choice == "off":
         is_on = False
     elif choice == "report":
