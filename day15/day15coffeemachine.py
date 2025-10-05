@@ -21,8 +21,34 @@ MENU = {
             "coffee": 24,
         },
         "cost": 3.0,
+    },
+    "godkiller": {
+        "ingredients": {
+            "water": 250,
+            "milk": 100,
+            "coffee": 24,
+        },
+        "cost": 3.0,
+    },
+    "monk": {
+        "ingredients": {
+            "water": 250,
+            "milk": 100,
+            "coffee": 24,
+        },
+        "cost": 3.0,
     }
+
+
 }
+results = []
+
+for key in MENU:
+    results.append(key)
+    
+    
+    
+print(results) 
 
 profit = 0
 resources = {
@@ -30,7 +56,6 @@ resources = {
     "milk": 200,
     "coffee": 100,
 }
-
 
 def is_resource_sufficient(order_ingredients):
     """Returns True when order can be made, False if ingredients are insufficient."""
@@ -74,7 +99,7 @@ def make_coffee(drink_name, order_ingredients):
 is_on = True
 
 while is_on:
-    choice = input("​What would you like? (espresso/latte/cappuccino): ")
+    choice = input(f"​What would you like? {results}: ")
     if choice == "off":
         is_on = False
     elif choice == "report":
@@ -88,9 +113,6 @@ while is_on:
             payment = process_coins()
             if is_transaction_successful(payment, drink["cost"]):
                 make_coffee(choice, drink["ingredients"])
-
-
-
 
 
 
