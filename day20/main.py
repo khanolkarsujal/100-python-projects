@@ -14,6 +14,7 @@ screen.tracer(0)
 
 
 snake = Snake()
+print(snake.tim[0].pencolor())
 # food = Food()
 
 
@@ -37,5 +38,5 @@ while game_is_on:
 
     snake.move()
 
-
 screen.exitonclick()
+
