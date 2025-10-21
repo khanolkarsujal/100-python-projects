@@ -1,6 +1,11 @@
 from turtle import Turtle
 ALIGNMENT = "center"
 FONT = ("Courier", 24, "normal")
+import os
+current_path = os.getcwd()
+
+new_path = f"{current_path}/day24/data.txt"
+
 
 
 class Scoreboard(Turtle):
@@ -9,11 +14,11 @@ class Scoreboard(Turtle):
         super().__init__()
         self.score = 0
         try:
-            with open("data.txt") as data:
+            with open(new_path) as data:
                 self.high_score = int(data.read())
         except FileNotFoundError:
             self.high_score = 0
-            with open("data.txt", mode="w") as data:
+            with open(new_path, mode="w") as data:
                 data.write("0")
         self.color("white")
         self.penup()
@@ -28,7 +33,7 @@ class Scoreboard(Turtle):
     def reset(self):
         if self.score > self.high_score:
             self.high_score = self.score
-            with open("data.txt", mode="w") as data:
+            with open(new_path, mode="w") as data:
                 data.write(f"{self.high_score}")
         self.score = 0
         self.update_scoreboard()
