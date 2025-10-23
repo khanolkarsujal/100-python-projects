@@ -32,30 +32,13 @@ km_label = Label(text="km")
 km_label.grid(column=2,row=1)
 
 
-# #Label
-# my_label = Label(text="I Am a Label", font=("Arial", 24, "bold"))
-# my_label.config(text="New Text")
-# my_label.grid(column=0, row=0)
-# my_label.config(padx=60, pady=60)
+
 
 
 
 Button
 button = Button(text="Calculate", command=button_clicked)
 button.grid(column=1, row=2)
-
-# new_button = Button(text="New Button" )
-# new_button.grid(column=3, row=0)
-
-# #Entry
-# input = Entry(width=10)
-# print(input.get())
-# input.grid(column=0, row=0)
-
-
-
-
-
 
 
 
