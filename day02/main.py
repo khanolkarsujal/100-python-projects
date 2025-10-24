@@ -6,6 +6,7 @@ tip = float(input("What percentage tip would you like to give? 10 , 12 , or 15 ?
 spilt_amount = float(bill_amount/spilt_bill)
 tip_percetage_amount = spilt_amount*(tip/100)
 final_amount = spilt_amount + tip_percetage_amount
-print(f"Each person should pay:${final_amount}")
+
+print(f"Each person should pay:${final_amount} ")
 
 
