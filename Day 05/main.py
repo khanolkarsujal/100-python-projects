@@ -23,7 +23,7 @@ for n in range(nr_numbers):
     random_n = random.choice(numbers)
     password.append(random_n)
 
-
+#for extra strong password
 random.shuffle(password)
 random.shuffle(password)
 random.shuffle(password)

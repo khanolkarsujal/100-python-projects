@@ -1,4 +1,6 @@
-#!/home/sujal-pc/Desktop/100-python-projects/day29/venv/bin/python3.12
+#!/bin/sh
+'''exec' "/home/sujal-pc/Desktop/100-python-projects/Day 29/venv/bin/python3" "$0" "$@"
+' '''
 # -*- coding: utf-8 -*-
 import re
 import sys

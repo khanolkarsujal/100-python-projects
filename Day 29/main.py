@@ -44,7 +44,7 @@ def save_data_button():
     )
 
     if is_ok:
-        with open(f"{current_path}/day29/Data.txt", "a") as data_file:
+        with open(f"{current_path}/Data.txt", "a") as data_file:
             data_file.write(f"{website} | {email} | {password}\n")
 
         webside_Entry.delete(0, END)
@@ -57,7 +57,7 @@ window.title("Password Manager")
 window.config(padx=50, pady=50)
 
 canvas = Canvas(height=200, width=200)
-logo_img = PhotoImage(file=f"{current_path}/day29/logo.png")
+logo_img = PhotoImage(file=f"{current_path}/Day 29/logo.png")
 canvas.create_image(100, 100, image=logo_img)
 canvas.grid(column=1, row=0)
 
