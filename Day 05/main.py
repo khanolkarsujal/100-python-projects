@@ -31,3 +31,13 @@ random.shuffle(password)
 password_final = ''.join(password)
 
 print(f"HERE IS YOUR PASSWORD :{password_final}")
+
+
+
+
+
+
+
+
+
+
