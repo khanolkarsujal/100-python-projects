@@ -1,50 +1,64 @@
-print('''
-*******************************************************************************
-          |                   |                  |                     |
- _________|________________.=""_;=.______________|_____________________|_______
-|                   |  ,-"_,=""     `"=.|                  |
-|___________________|__"=._o`"-._        `"=.______________|___________________
-          |                `"=._o`"=._      _`"=._                     |
- _________|_____________________:=._o "=._."_.-="'"=.__________________|_______
-|                   |    __.--" , ; `"=._o." ,-"""-._ ".   |
-|___________________|_._"  ,. .` ` `` ,  `"-._"-._   ". '__|___________________
-          |           |o`"=._` , "` `; .". ,  "-._"-._; ;              |
- _________|___________| ;`-.o`"=._; ." ` '`."\` . "-._ /_______________|_______
-|                   | |o;    `"-.o`"=._``  '` " ,__.--o;   |
-|___________________|_| ;     (#) `-.o `"=.`_.--"_o.-; ;___|___________________
-____/______/______/___|o;._    "      `".o|o_.--"    ;o;____/______/______/____
-/______/______/______/_"=._o--._        ; | ;        ; ;/______/______/______/_
-____/______/______/______/__"=._o--._   ;o|o;     _._;o;____/______/______/____
-/______/______/______/______/____"=._o._; | ;_.--"o.--"_/______/______/______/_
-____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
-/______/______/______/______/______/______/______/______/______/______/_____ /
-*******************************************************************************
-''')
-print("Welcome to Treasure Island.")
-print("Your mission is to find the treasure.")
+import art
+import os
 
-chocie1 = input("You're at a crossroad.Where do you to go?Type 'left' or 'right' ").lower()
-if chocie1 == "left" :
+def clear():
+    os.system('cls' if os.name == 'nt' else 'clear')
 
-    chocie2 = input("You've come to a lake. There is an island in the middle of the lake.Type 'swin' or 'wait'").lower()
+def game_story():
+    clear()
+    print(art.game_title)
 
+    choice_crossroad = input("\nYou're at a crossroad. Where do you want to go? Type 'left' or 'right': ").lower()
+    if choice_crossroad == "left":
+        clear()
+        print(art.game_title)
 
-    if chocie2 == "swin" :
-      
+        choice_lake = input("\nYou've come to a lake. There's an island in the middle.\nDo you 'swim' or 'wait'?: ").lower()
+        if choice_lake == "wait":
+            clear()
+            print(art.game_title)
 
-      chocie3 = input("You arrive at the island unharmed. There is a house with 3 doors. One red, one yellow and one blue. Which colour do you choose?").lower()
-      if chocie3 == "yellow" :
-        print("You found the treasure! You Win!")
-      elif chocie3 == "red" :
-        print("It's a room full of fire. Game Over.")
-      elif chocie3 == "blue" :
-        print("You enter a room of beasts. Game Over.")    
-      else:
-        print("You chose a door that doesn't exist. Game Over.")    
-    
+            choice_door = input("\nYou arrive unharmed.\nThere is a house with 3 doors: Red, Yellow, and Blue.\nWhich colour do you choose?: ").lower()
+            if choice_door == "yellow":
+                clear()
+                print(art.logo)
+                print("\n💎 You found the treasure! You WIN! 💎\n")
+            elif choice_door == "red":
+                clear()
+                print(art.game_over)
+                print("\n🔥 You opened the fire room. Game Over.")
+            elif choice_door == "blue":
+                clear()
+                print(art.game_over)
+                print("\n🐺 The beasts devoured you. Game Over.")
+            else:
+                clear()
+                print(art.game_over)
+                print("\n🚪 That door does not exist. Game Over.")
+        else:
+            clear()
+            print(art.game_over)
+            print("\n🐍 You were attacked by a wild creature while swimming. Game Over.")
     else:
-        print("You're attack by trout ! GAME OVER !!")
+        clear()
+        print(art.game_over)
+        print("\n🕳 You fell into a deep hole. Game Over.")
+while True:
+    clear()
+    print(art.game_title)
+    print(art.menu_start)
+    print(art.menu)
 
-else:
-    print("YOU Fall into a hole! Game Over!")
+    user_choice = input("Choose your path: ").strip()
 
+    if user_choice == "1":
+        clear()
+        print("\n⚔ The cursed path awaits... ⚔\n")
+        game_story()
+        input("\nPress ENTER to return to menu...")
+    elif user_choice == "2":
+        print("\n👁 The void consumes the weak... Farewell.\n")
+        break
+    else:
+        print("\n❌ Invalid choice. Try again.\n")
+        input("Press ENTER...")
