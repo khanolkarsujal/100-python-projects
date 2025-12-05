@@ -18,7 +18,6 @@ while True :
     print(art.logo)
     print(art.menu_end)
 
-
 #Generated Band Name
     print(f"───── ⚔︎ Your Band Name Could Be ⚔︎ ─────: \n\n : ✦⚔︎⚔︎⚔︎ {user_input}.{user_input2} ⚔︎⚔︎⚔︎✦")
     print(art.menu_end)
